@@ -24,6 +24,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import { BASE_URL } from "helper";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,6 @@ const MyPostWidget = ({ picturePath }) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
-  const BASE_URL = process.env.BASE_URL;
 
   const handlePost = async () => {
     const formData = new FormData();

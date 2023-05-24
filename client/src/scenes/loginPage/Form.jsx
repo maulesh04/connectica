@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
+import { BASE_URL } from "helper";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -54,7 +55,6 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
-  const BASE_URL = process.env.BASE_URL;
 
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image

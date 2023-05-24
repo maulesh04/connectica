@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
+import { BASE_URL } from "helper";
 
 const UserImage = ({ image, size = "60px" }) => {
-    const BASE_URL = process.env.BASE_URL;
 
     return(
         <Box width={size} height={size}>
