@@ -12,9 +12,10 @@ const ProfilePage = () => {
     const { userId } = useParams();
     const token = useSelector((state) => state.token);
     const isNonMobileScreens = useMediaQuery("(min-width:1000px)")
+    const BASE_URL = process.env.BASE_URL;
 
     const getUser = async () => {
-        const response = await fetch(`http://localhost:3001/users/${userId}`, {
+        const response = await fetch(`${BASE_URL}/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`}
         })
