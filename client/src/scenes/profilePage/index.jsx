@@ -6,7 +6,6 @@ import Navbar from "scenes/navbar";
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import UserWidget from "scenes/widgets/UserWidget";
-import { BASE_URL } from "helper";
 
 const ProfilePage = () => {
     const [user, setUser] = useState(null);
@@ -15,7 +14,7 @@ const ProfilePage = () => {
     const isNonMobileScreens = useMediaQuery("(min-width:1000px)")
 
     const getUser = async () => {
-        const response = await fetch(`${BASE_URL}/users/${userId}`, {
+        const response = await fetch(process.env.REACT_APP_BASE_URL+`/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`}
         })
