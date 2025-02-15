@@ -42,8 +42,8 @@ const initialValuesRegister = {
 };
 
 const initialValuesLogin = {
-  email: "",
-  password: "",
+  email: "testid@gmail.com",
+  password: "6789",
 };
 
 const Form = () => {
